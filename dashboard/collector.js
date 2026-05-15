@@ -43,9 +43,8 @@ function requireEnv(name) {
     'sw-appliance-secret-123'
   ];
   if (!val || dangerous.includes(val)) {
-    console.error(`\n[FATAL] Missing or dangerous security variable: ${name}`);
-    console.error(`Please set a unique value for ${name} in your .env file.\n`);
-    process.exit(1);
+    console.warn(`\n[ShieldWatch] ⚠️ WARNING: Missing or dangerous security variable: ${name}`);
+    console.warn(`[ShieldWatch] ⚠️ ShieldWatch is running with INSECURE DEFAULTS for demo purposes.\n`);
   }
 }
 
